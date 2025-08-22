@@ -167,22 +167,19 @@ footer {
 }
 
 .site-nav ul{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     list-style: none;
     margin: .75rem 0 0;
     padding: 0;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .site-nav li{
-    float: left;
-    margin:  0 0.5rem;
+    margin:  0;
 }
 
-.site-nav::after{
-    content: "";
-    display: block;
-    clear:  both;
-}
 
 .site-nav a{
     color: #fff;
