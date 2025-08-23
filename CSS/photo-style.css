@@ -1,14 +1,19 @@
-.gallery{
+.gallery {
+    --gap: 1rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--gap);
     margin: 2rem auto;
-    max-width:  1000px;
+    max-width: 1000px;
 }
 
-.gallery img{
-    flex: 1 1 240px;
-    max-width:300px;
+.gallery img {
+    box-sizing: border-box;
+    flex: 0 0 calc((100% - 2 * var(--gap)) / 3);
+    max-width: calc((100% - 2 * var(--gap)) / 3);
+    margin: 0;
+    padding: 5px;              /* ← белая прокладка */
+    background-color: #fff;
     object-fit: cover;
-    aspect-ratio: 4/3;
+    aspect-ratio: 4 / 3;
 }
