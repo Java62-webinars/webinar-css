@@ -20,7 +20,7 @@ header, footer {
     background-position: center;
     background-color: #8B0000;
     color: white;
-    padding: 2rem;
+    padding: 2rem 2rem 0.5rem 2rem;
     border-bottom: 5px solid #b22222;
     font-family: 'Orbitron', sans-serif;
 }
