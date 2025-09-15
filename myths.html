@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mars Odyssey — Myths</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4287/4287555.png" />
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./CSS/style2.css" />
+    <!-- Minimal custom styles to match Mars theme -->
+    <style>
+        :root{ --accent:#b22222; }
+        body{ font-family:'Roboto',sans-serif; background:#fefefe; color:#333; }
+
+        /* Header background like other pages */
+
+
+        /* Navbar look aligned with your Photos page */
+        .navbar-dark .navbar-nav .nav-link{
+            color:#fff;
+            border:1px solid rgba(255,255,255,.25);
+            border-radius:.5rem;
+            padding:.4rem .8rem;
+            background:rgba(255,255,255,.06);
+            margin:.25rem .35rem;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover,
+        .navbar-dark .navbar-nav .nav-link:focus{
+            background:rgba(255,255,255,.18);
+            border-color:rgba(255,255,255,.4);
+        }
+        .navbar-dark .navbar-nav .nav-link.active{
+            background:rgba(255,255,255,.28);
+            border-color:rgba(255,255,255,.6);
+        }
+
+        /* Cards with a subtle Mars accent */
+        .myth-card.card{
+            border:3px solid var(--accent);
+            border-radius:12px;
+            background:#fff;
+            box-shadow:0 2px 10px rgba(0,0,0,.06);
+        }
+        .myth-card .card-header{
+            background:#ffe4e1;
+            border-bottom:1px solid rgba(0,0,0,.06);
+            font-family:'Orbitron',sans-serif;
+            color:var(--accent);
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+
+        <h1 class="brand">The Newest Martian Chronicles</h1>
+        <p class="tagline mb-0">Unraveling the legends of the Red Planet</p>
+
+    <!-- NAVBAR (burger at <768px, expanded from md) -->
+    <nav class="navbar navbar-dark navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand d-md-none" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="myths.html">Myths</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About the Project</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN -->
+<main class="container my-4">
+    <h2 class="mb-4" style="font-family:'Orbitron',sans-serif; color:var(--accent);">Myths vs Facts</h2>
+
+    <!-- Intro -->
+    <div class="row g-3 mb-3">
+        <div class="col-12">
+            <div class="card myth-card">
+                <div class="card-body">
+                    From ancient omens to 19th-century “canals” and modern viral hoaxes, Mars has been a mirror for human hopes and fears.
+                    This page traces the big myths — and the science that reshaped them — from antiquity to the dawn of the Space Age.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline-like grid -->
+    <div class="row g-3">
+        <!-- 1 -->
+        <div class="col-12 col-md-6">
+            <div class="card myth-card h-100">
+                <div class="card-header">Antiquity</div>
+                <div class="card-body">
+                    <h5 class="card-title">“Mars is the god of war.”</h5>
+                    <p class="card-text"><strong>Myth:</strong> The red planet foretells conflict and bloodshed.</p>
+                    <p class="card-text"><strong>Fact:</strong> Many cultures tied Mars’ red hue to war — Ares/Mars (Greeks/Romans), Nergal (Babylonians), Mangala (India).
+                        Changes in brightness and motion were read as omens; today we know they’re orbital mechanics and dust.</p>
+                    <p class="card-text"><em>Evidence:</em> Historical records; naked-eye observations.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 2 -->
+        <div class="col-12 col-md-6">
+            <div class="card myth-card h-100">
+                <div class="card-header">Middle Ages</div>
+                <div class="card-body">
+                    <h5 class="card-title">“Mars governs human fate.”</h5>
+                    <p class="card-text"><strong>Myth:</strong> Mars dictates temperament and misfortune in horoscopes.</p>
+                    <p class="card-text"><strong>Fact:</strong> Astrology gave Mars symbolic power; astronomy separated from it, showing planetary motions are predictable natural phenomena, not causes of events on Earth.</p>
+                    <p class="card-text"><em>Evidence:</em> From Ptolemy to Copernicus/Kepler/Galileo/Newton.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 3 -->
+        <div class="col-12 col-md-6">
+            <div class="card myth-card h-100">
+                <div class="card-header">1600s</div>
+                <div class="card-body">
+                    <h5 class="card-title">“Those patches are seas and continents.”</h5>
+                    <p class="card-text"><strong>Myth:</strong> Dark/bright areas are oceans and lands, implying an Earth-like world.</p>
+                    <p class="card-text"><strong>Fact:</strong> Early telescopes showed albedo features (e.g., Syrtis Major). They’re volcanic plains, dust, and rock — not oceans.</p>
+                    <p class="card-text"><em>Evidence:</em> Telescopic drawings (Huygens), later spectroscopy & imaging.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 4 -->
+        <div class="col-12 col-md-6">
+            <div class="card myth-card h-100">
+                <div class="card-header">Late 1800s</div>
+                <div class="card-body">
+                    <h5 class="card-title">“Engineered canals crisscross Mars.”</h5>
+                    <p class="card-text"><strong>Myth:</strong> A global network of canals, built by an advanced civilization to move water.</p>
+                    <p class="card-text"><strong>Fact:</strong> Schiaparelli’s “canali” meant channels; mistranslation + human pattern-finding led to canal maps (Lowell). Modern imaging shows no artificial lines — illusions from optics and expectation.</p>
+                    <p class="card-text"><em>Evidence:</em> Historical drawings vs modern HST/Mars orbiter images.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 5 -->
+        <div class="col-12 col-md-6">
+            <div class="card myth-card h-100">
+                <div class="card-header">1898 & beyond</div>
+                <div class="card-body">
+                    <h5 class="card-title">“Martians will invade Earth.”</h5>
+                    <p class="card-text"><strong>Myth:</strong> Fiction popularized Mars as home of intelligent, even hostile beings.</p>
+                    <p class="card-text"><strong>Fact:</strong> Stories like <em>The War of the Worlds</em> inspired curiosity but are not evidence. Science requires observations, repeatable data, and testable hypotheses.</p>
+                    <p class="card-text"><em>Evidence:</em> Literature vs observations; no confirmed artificial structures.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 6 -->
+        <div class="col-12 col-md-6">
+            <div class="card myth-card h-100">
+                <div class="card-header">Early 1900s</div>
+                <div class="card-body">
+                    <h5 class="card-title">“Geometric shapes prove ruins.”</h5>
+                    <p class="card-text"><strong>Myth:</strong> Letters, grids, and artificial forms are visible on Mars.</p>
+                    <p class="card-text"><strong>Fact:</strong> Low resolution + human pareidolia = false patterns. Better optics erased the illusions.</p>
+                    <p class="card-text"><em>Evidence:</em> Improved telescopes; later spacecraft imaging.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 7 -->
+        <div class="col-12">
+            <div class="card myth-card">
+                <div class="card-header">1950s–1960s</div>
+                <div class="card-body">
+                    <h5 class="card-title">“Mars may have vegetation and canals.”</h5>
+                    <p class="card-text"><strong>Myth:</strong> Seasonal “greening,” canals, even civilizations were still discussed by some.</p>
+                    <p class="card-text"><strong>Fact:</strong> First flyby (Mariner 4, 1965) revealed a cratered, cold world with a thin CO₂ atmosphere — more lunar than Earth-like. Later missions refined that picture.</p>
+                    <p class="card-text"><em>Evidence:</em> Mariner 4 flyby images; later Mariner/Mars orbiter data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern myths preview -->
+    <h3 class="mt-4" style="font-family:'Orbitron',sans-serif; color:var(--accent);">Modern Viral Myths (Preview)</h3>
+    <div class="row g-3">
+        <div class="col-12 col-lg-6">
+            <div class="card myth-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">“Mars will look as big as the Moon.”</h5>
+                    <p class="card-text"><strong>Fact:</strong> Hoax. Even at closest approach, Mars is a bright star-like disk to the naked eye.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="card myth-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">“Viking found life in 1976.”</h5>
+                    <p class="card-text"><strong>Fact:</strong> Ambiguous signals likely chemical; the search continues with rovers and returned samples.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Yourself (no JS) -->
+    <h3 class="mt-4" style="font-family:'Orbitron',sans-serif; color:var(--accent);">Test Yourself</h3>
+    <div class="row g-3">
+        <div class="col-12 col-lg-4">
+            <details class="card myth-card p-3">
+                <summary>Mars is named after the god of war because it causes wars.</summary>
+                <p class="mt-2 mb-0"><strong>Answer:</strong> False. The association is symbolic (color), not causal.</p>
+            </details>
+        </div>
+        <div class="col-12 col-lg-4">
+            <details class="card myth-card p-3">
+                <summary>“Canali” meant artificial canals built by Martians.</summary>
+                <p class="mt-2 mb-0"><strong>Answer:</strong> False. It meant natural channels; “canals” was a mistranslation + imagination.</p>
+            </details>
+        </div>
+        <div class="col-12 col-lg-4">
+            <details class="card myth-card p-3">
+                <summary>Mariner 4 ended the idea of oceans and vegetation on Mars.</summary>
+                <p class="mt-2 mb-0"><strong>Answer:</strong> Largely true — the images reset expectations.</p>
+            </details>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer >
+    <div>
+        <p >&copy; 2025 The Newest Martian Chronicles — Sources: NASA/JPL, ESA, Wikimedia Commons</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS (navbar burger) -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
