@@ -87,3 +87,31 @@ const photos = [
         caption: "Curiosity “Postcard” — NASA/JPL-Caltech/MSSS"
     }
 ]
+//3 Сборка
+const main = document.querySelector("main");
+if(main){
+    const row = document.createElement("div");
+    row.className = "row g-3";
+    for(const p of photos) {
+        const col = document.createElement("div");
+        col.className = CLASS_COL;
+        const card = document.createElement("div");
+        card.className = CLASS_CARD;
+        const img = document.createElement("img");
+        img.className = CLASS_IMG;
+        img.src = p.src;
+        img.alt = p.alt;
+        const overlay = document.createElement("div");
+        overlay.className = CLASS_OVL;
+        const cap = document.createElement("div");
+        cap.className = CLASS_CAP;
+        cap.textContent = p.caption;
+        overlay.appendChild(cap);
+        card.append(img, overlay);
+        col.appendChild(card);
+        row.appendChild(col);
+    }
+    main.appendChild(row);
+}else{
+    console.warn("main container not found");
+}
