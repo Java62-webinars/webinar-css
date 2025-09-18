@@ -40,29 +40,63 @@ const photos = [
 ]
 //3 Сборка
 const main = document.querySelector("main");
+
+function makeElement(tag, className ="") {
+    const element = document.createElement(tag);
+    if(className) {
+        element.className = className;
+    };
+    return element;
+}
+
+function createPhoto(p) {
+    const col = makeElement("div", CLASS_COL);
+    const card = makeElement("div", CLASS_CARD);
+    const img =  makeElement("img", CLASS_IMG);
+    img.src = p.src;
+    img.alt = p.alt;
+    const overlay = makeElement("div", CLASS_OVL);
+    const cap =  makeElement("div", CLASS_CAP);
+    cap.textContent = p.caption;
+    overlay.appendChild(cap);
+    card.append(img, overlay);
+    col.appendChild(card);
+    return col;
+}
+
 if(main){
-    const row = document.createElement("div");
-    row.className = "row g-3";
+    const addBtn = document.getElementById("addBtn");
+    const form = document.getElementById("addForm");
+    const cancel = document.getElementById("cancelBtn");
+    addBtn.onclick = () =>{
+        form.style.display = "block";
+        addBtn.style.display = "none";
+    }
+    cancel.onclick = () =>{
+        form.style.display = "none";
+        addBtn.style.display = "inline-block";
+    }
+    const row = makeElement("div","row g-3" );
+    //O(N)
     for(const p of photos) {
-        const col = document.createElement("div");
-        col.className = CLASS_COL;
-        const card = document.createElement("div");
-        card.className = CLASS_CARD;
-        const img = document.createElement("img");
-        img.className = CLASS_IMG;
-        img.src = p.src;
-        img.alt = p.alt;
-        const overlay = document.createElement("div");
-        overlay.className = CLASS_OVL;
-        const cap = document.createElement("div");
-        cap.className = CLASS_CAP;
-        cap.textContent = p.caption;
-        overlay.appendChild(cap);
-        card.append(img, overlay);
-        col.appendChild(card);
+        const col = createPhoto(p);
         row.appendChild(col);
     }
     main.appendChild(row);
+
+
 }else{
     console.warn("main container not found");
 }
+
+
+//O(1)
+//TODO ADD Photo to Page
+// const ph = {
+//     src: "https://photojournal.jpl.nasa.gov/jpeg/PIA25068.jpg",
+//     alt: "Dust Storm and Jezero Crater",
+//     caption: "Dust Storm and Jezero Crater — NASA/JPL-Caltech"
+// };
+// const phNew = createPhoto(ph);
+// row.appendChild(phNew);
+//TODO Add form to add photo
