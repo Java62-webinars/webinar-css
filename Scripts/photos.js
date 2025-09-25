@@ -67,6 +67,7 @@ if (main) {
         formDiv.appendChild(input);
     });
     main.appendChild(form);
+    form.addEventListener("click", ()=> console.log('form'));
     const sccBtn = makeElement("button", "btn btn-success");
     sccBtn.textContent = "Add Photo";
     const cancel = makeElement("button", "btn btn-secondary ms-2");
@@ -80,6 +81,7 @@ if (main) {
         row.appendChild(col);
     }
     main.appendChild(row);
+
     form.onsubmit = (e) => {
         e.preventDefault() // блокируем стандартную отправку на сервер
 
@@ -108,8 +110,12 @@ if (main) {
         addBtn.style.display = "inline-block";
     }
 
-
-
+    main.addEventListener("click",  (e)=>{
+        console.log("BUBBLE", e.target.alt);
+    },);
+    main.addEventListener("click", (e)=>{
+        console.log("CAPTURE", e.target.tagName);
+    }, {capture:true});
 } else {
     console.warn("main container not found");
 }
