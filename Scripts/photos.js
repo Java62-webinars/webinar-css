@@ -45,6 +45,78 @@ const photos = [
 //3 Сборка
 const main = document.querySelector("main");
 
+
+
+if (main) {
+
+    //==========Initial page ============
+    const addBtn = makeElement("button", CLASS_BTN_ADD_PHOTO);
+    addBtn.textContent = "➕ Add Photo";
+    main.appendChild(addBtn);
+    const form = makeElement("form", CLASS_FORM_ADD_PHOTO);
+    form.style.display = "none";
+    const fields = Object.keys(photos[0]);
+    fields.forEach(field => {
+        const formDiv = makeElement("div", CLASS_INNERFORM_DIV);
+        form.appendChild(formDiv);
+        const input = makeElement("input", CLASS_INPUT_FORM);
+        input.name = field;
+        input.type = "text";
+        input.placeholder = `Input ${field}`;
+        input.setAttribute('required', '');
+        formDiv.appendChild(input);
+    });
+    main.appendChild(form);
+    const sccBtn = makeElement("button", "btn btn-success");
+    sccBtn.textContent = "Add Photo";
+    const cancel = makeElement("button", "btn btn-secondary ms-2");
+    cancel.textContent = "Cancel";
+    form.appendChild(sccBtn);
+    form.appendChild(cancel);
+    const row = makeElement("div", "row g-3");
+    //O(N)
+    for (const p of photos) {
+        const col = createPhoto(p);
+        row.appendChild(col);
+    }
+    main.appendChild(row);
+    form.onsubmit = (e) => {
+        e.preventDefault() // блокируем стандартную отправку на сервер
+
+        const formData = new FormData(form) // собираем данные из полей
+
+        const newPhoto = {
+            src: formData.get("src"),      // ссылка на картинку
+            alt: formData.get("alt"),      // текст для атрибута alt
+            caption: formData.get("caption") // подпись под фото
+        }
+
+        photos.push(newPhoto)                  // добавляем объект в массив
+        row.appendChild(createPhoto(newPhoto))  // и сразу дорисовываем карточку
+
+        form.reset()
+        form.style.display = "none"
+        addBtn.style.display = "inline-block"
+    }
+
+    addBtn.onclick = () => {
+        form.style.display = "block";
+        addBtn.style.display = "none";
+    }
+    cancel.onclick = () => {
+        form.style.display = "none";
+        addBtn.style.display = "inline-block";
+    }
+
+
+
+} else {
+    console.warn("main container not found");
+}
+
+
+
+
 function makeElement(tag, className = "") {
     const element = document.createElement(tag);
     if (className) {
@@ -68,71 +140,3 @@ function createPhoto(p) {
     col.appendChild(card);
     return col;
 }
-
-if (main) {
-
-    //==========Initial page ============
-    const addBtn = makeElement("button", CLASS_BTN_ADD_PHOTO);
-    addBtn.textContent = "➕ Add Photo";
-    main.appendChild(addBtn);
-
-    const form = makeElement("form", CLASS_FORM_ADD_PHOTO);
-    form.style.display = "none";
-
-    const fields = Object.keys(photos[0]);
-    fields.forEach(field => {
-        const formDiv = makeElement("div", CLASS_INNERFORM_DIV);
-        form.appendChild(formDiv);
-        const input = makeElement("input", CLASS_INPUT_FORM);
-        input.name = field;
-        input.type = "text";
-        input.placeholder = `Input ${field}`;
-        input.setAttribute('required', '');
-        formDiv.appendChild(input);
-    });
-    main.appendChild(form);
-    const sccBtn = makeElement("button", "btn btn-success");
-    sccBtn.textContent = "Add Photo";
-    const cancel = makeElement("button", "btn btn-secondary ms-2");
-    cancel.textContent = "Cancel";
-    form.appendChild(sccBtn);
-    form.appendChild(cancel);
-
-
-    addBtn.onclick = () => {
-        form.style.display = "block";
-        addBtn.style.display = "none";
-    }
-    cancel.onclick = () => {
-        form.style.display = "none";
-        addBtn.style.display = "inline-block";
-    }
-    const row = makeElement("div", "row g-3");
-    //O(N)
-    for (const p of photos) {
-        const col = createPhoto(p);
-        row.appendChild(col);
-    }
-    main.appendChild(row);
-
-
-} else {
-    console.warn("main container not found");
-}
-
-
-
-//     <button type="submit" className="btn btn-success">Добавить</button>
-//     <button type="button" id="cancelBtn" className="btn btn-secondary ms-2">Отмена</button>
-// </form>
-
-//O(1)
-//TODO ADD Photo to Page
-// const ph = {
-//     src: "https://photojournal.jpl.nasa.gov/jpeg/PIA25068.jpg",
-//     alt: "Dust Storm and Jezero Crater",
-//     caption: "Dust Storm and Jezero Crater — NASA/JPL-Caltech"
-// };
-// const phNew = createPhoto(ph);
-// row.appendChild(phNew);
-//TODO Add form to add photo
