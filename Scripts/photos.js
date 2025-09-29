@@ -84,13 +84,30 @@ if (main) {
     const tip = makeElement("div", "alert alert-danger my-2");
     tip.textContent = "Это очень важная информация (!): кликните по фото (сработает один раз).";
     main.insertBefore(tip, row);
+
     row.addEventListener("click", (e) => {
         if (e.target.tagName === "IMG") {
             console.log("Первый клик по фото:", e.target.alt);
             tip.remove(); // убираем подсказку
         }
     }, { once: true });
-
+//"dblclick" - событие
+    //e.target.tagName === "IMG" - адаптировать под аппликацию
+    row.addEventListener("dblclick", (e) => {
+        if(e.target.tagName === "IMG") {
+            const img = e.target;
+            const src = img.src; //адаптировать под аппликацию
+            const col = img.parentElement.parentElement;// Элемент который удаляем, адаптировать под аппликацию
+            if(col) col.remove();
+            //Удаление из БД (бэкенда) - адаптировать
+            const index = photos.findIndex(p => p.src === src);
+            if(index != -1){
+                photos.splice(index, 1);
+                console.log("photo deleted");
+            }
+            console.log("Photos: ", photos.length);
+        }
+    });
 
     form.onsubmit = (e) => {
         e.preventDefault() // блокируем стандартную отправку на сервер
@@ -118,12 +135,13 @@ if (main) {
         addBtn.style.display = "inline-block";
     }
 
-    main.addEventListener("click",  (e)=>{
-        console.log("BUBBLE", e.target.alt);
-    },);
-    main.addEventListener("click", (e)=>{
-        console.log("CAPTURE", e.target.tagName);
-    }, {capture:true});
+    // main.addEventListener("dblclick",  (e)=>{
+    //     e.stopPropagation()
+    //     console.log("stoppropagation", e.target.alt);
+    // },{capture:true});
+    // main.addEventListener("click", (e)=>{
+    //     console.log("CAPTURE", e.target.tagName);
+    // }, {capture:true});
 } else {
     console.warn("main container not found");
 }
@@ -143,6 +161,11 @@ function createPhoto(p) {
     const col = makeElement("div", CLASS_COL);
     const card = makeElement("div", CLASS_CARD);
     const img = makeElement("img", CLASS_IMG);
+
+    // img.addEventListener("dblclick", (e) =>{
+    //     e.stopPropagation();
+    //     console.log("Propagation stopped");
+    // });
     img.src = p.src;
     img.alt = p.alt;
     const overlay = makeElement("div", CLASS_OVL);
