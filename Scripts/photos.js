@@ -81,6 +81,16 @@ if (main) {
         row.appendChild(col);
     }
     main.appendChild(row);
+    const tip = makeElement("div", "alert alert-danger my-2");
+    tip.textContent = "Это очень важная информация (!): кликните по фото (сработает один раз).";
+    main.insertBefore(tip, row);
+    row.addEventListener("click", (e) => {
+        if (e.target.tagName === "IMG") {
+            console.log("Первый клик по фото:", e.target.alt);
+            tip.remove(); // убираем подсказку
+        }
+    }, { once: true });
+
 
     form.onsubmit = (e) => {
         e.preventDefault() // блокируем стандартную отправку на сервер
@@ -92,10 +102,8 @@ if (main) {
             alt: formData.get("alt"),      // текст для атрибута alt
             caption: formData.get("caption") // подпись под фото
         }
-
         photos.push(newPhoto)                  // добавляем объект в массив
         row.appendChild(createPhoto(newPhoto))  // и сразу дорисовываем карточку
-
         form.reset()
         form.style.display = "none"
         addBtn.style.display = "inline-block"
@@ -127,8 +135,7 @@ function makeElement(tag, className = "") {
     const element = document.createElement(tag);
     if (className) {
         element.className = className;
-    }
-    ;
+    };
     return element;
 }
 
