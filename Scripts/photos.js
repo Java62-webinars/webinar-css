@@ -6,8 +6,8 @@ const CLASS_OVL = "card-img-overlay d-flex align-items-end";
 const CLASS_CAP = "w-100 small";
 const CLASS_BTN_ADD_PHOTO = "btn btn-primary my-3";
 const CLASS_FORM_ADD_PHOTO = "border p-3 mb-3";
-const CLASS_INNERFORM_DIV ="mb-2";
-const CLASS_INPUT_FORM="form-control"
+const CLASS_INNERFORM_DIV = "mb-2";
+const CLASS_INPUT_FORM = "form-control"
 
 //2 Фото - как массив объектов
 const photos = [
@@ -17,7 +17,7 @@ const photos = [
         caption: "Dust Storm and Jezero Crater — NASA/JPL-Caltech"
     },
     {
-        src: "https://photojournal.jpl.nasa.gov/jpegMod/PIA25897_modest.jpg",
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6q8s3heMl_TruN8qmUFkdInUxj_m05NWWtg&s",
         alt: "Looking at the Crater Half Full",
         caption: "Looking at the Crater Half Full — NASA/JPL-Caltech"
     },
@@ -27,12 +27,12 @@ const photos = [
         caption: "Curiosity “Postcard” — NASA/JPL-Caltech/MSSS"
     },
     {
-        src: "https://photojournal.jpl.nasa.gov/jpegMod/PIA26632_modest.jpg",
+        src: "https://d2pn8kiwq2w21t.cloudfront.net/images/jpegPIA26644.2e16d0ba.fill-430x430-c70.format-jpeg.jpg",
         alt: "Curiosity Landscape While Talking to an Orbiter",
         caption: "Curiosity Landscape — NASA/JPL-Caltech"
     },
     {
-        src: "https://photojournal.jpl.nasa.gov/jpegMod/PIA26633_modest.jpg",
+        src: "https://d2pn8kiwq2w21t.cloudfront.net/images/jpegPIA26633.width-1600.jpg",
         alt: "Rock shaped like coral",
         caption: "Rock “like coral” — NASA/JPL-Caltech"
     },
@@ -40,11 +40,99 @@ const photos = [
         src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Phobos_colour_2008.jpg",
         alt: "Phobos moon color view",
         caption: "Phobos — ESA/DLR/FU Berlin (CC BY-SA)"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia05/pia05538/PIA05538.jpg",
+        alt: "Spirit reaches the rim of Bonneville Crater",
+        caption: "Spirit — NASA/JPL"
+    },
+    {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Sojourner_on_Mars_PIA01122.jpg",
+        alt: "Sojourner rover near 'The Dice' (Pathfinder lander view)",
+        caption: "Pathfinder/Sojourner — NASA/JPL (via Wikimedia Commons)"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia01/pia01904/PIA01904.jpg",
+        alt: "‘McMurdo’ winter panorama (Spirit Pancam, stereo version)",
+        caption: "Spirit — NASA/JPL/Cornell"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia08/pia08810/PIA08810.jpg",
+        alt: "Victoria Crater 'Cape Verde' layers (Opportunity Pancam)",
+        caption: "Opportunity — NASA/JPL/Cornell"
+    },
+    {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Opportunity_at_Victoria_Crater_from_Mars_reconnaissance_orbiter.jpg",
+        alt: "Opportunity at Victoria Crater (seen by MRO/HiRISE)",
+        caption: "Opportunity from orbit — NASA/JPL/Univ. of Arizona (Wikimedia)"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia19/pia19142/PIA19142.jpg",
+        alt: "Curiosity selfie at 'Mojave' site",
+        caption: "Curiosity at Mojave — NASA/JPL-Caltech/MSSS"
+    },
+    {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/PIA24435-Mars-IngenuityHelicopter-VanZylOverlook-20210323.jpg",
+        alt: "Ingenuity at Van Zyl Overlook (Perseverance mastcam view)",
+        caption: "Ingenuity — NASA/JPL-Caltech (via Wikimedia Commons)"
+    },
+    {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/PIA18390-MarsCuriosityRover-SelfPortraitAtWindjana-20140512.jpg",
+        alt: "Curiosity selfie at 'Windjana' drilling site",
+        caption: "Curiosity — NASA/JPL-Caltech/MSSS (via Wikimedia Commons)"
+    },
+    {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/PIA16937-MarsCuriosityRover-SelfPortraitAtJohnKlein-20130510.jpg",
+        alt: "Curiosity selfie at 'John Klein' drill site",
+        caption: "Curiosity — NASA/JPL-Caltech/MSSS (via Wikimedia Commons)"
+    },
+    {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/PIA16239_High-Resolution_Self-Portrait_by_Curiosity_Rover_Arm_Camera_unedited.jpg",
+        alt: "Curiosity high-resolution self-portrait (MAHLI)",
+        caption: "Curiosity — NASA/JPL-Caltech/MSSS (via Wikimedia Commons)"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia19/pia19807/PIA19807.jpg",
+        alt: "Curiosity low-angle panorama at Buckskin",
+        caption: "Curiosity Buckskin panorama — NASA/JPL-Caltech/MSSS"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia16/pia16468/PIA16468.jpg",
+        alt: "Curiosity 'Rocknest' workplace selfie",
+        caption: "Curiosity at Rocknest — NASA/JPL-Caltech/MSSS"
+    },{
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia25/pia25564/PIA25564.jpg",
+        alt: "Mars Terrain with Crater",
+        caption: "Mars terrain with crater — NASA/JPL-Caltech"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia22/pia22171/PIA22171.jpg",
+        alt: "Mars Panorama — Curiosity",
+        caption: "Mars panorama captured by Curiosity — NASA/JPL-Caltech"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20321/PIA20321.jpg",
+        alt: "Martian Dunes",
+        caption: "Martian sand dunes — NASA/JPL"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20322/PIA20322.jpg",
+        alt: "Rocky Ridge on Mars",
+        caption: "Rocky ridge — NASA/JPL"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia21/pia21414/PIA21414.jpg",
+        alt: "Shadowed Cliff Face",
+        caption: "Shadowed cliff — NASA/JPL"
+    },
+    {
+        src: "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia24/pia24057/PIA24057.jpg",
+        alt: "Crater Floor Panorama",
+        caption: "Crater floor panorama — NASA/JPL-Caltech"
     }
 ]
 //3 Сборка
 const main = document.querySelector("main");
-
 
 
 if (main) {
@@ -67,7 +155,7 @@ if (main) {
         formDiv.appendChild(input);
     });
     main.appendChild(form);
-    form.addEventListener("click", ()=> console.log('form'));
+    form.addEventListener("click", () => console.log('form'));
     const sccBtn = makeElement("button", "btn btn-success");
     sccBtn.textContent = "Add Photo";
     const cancel = makeElement("button", "btn btn-secondary ms-2");
@@ -76,34 +164,38 @@ if (main) {
     form.appendChild(cancel);
     const row = makeElement("div", "row g-3");
     //O(N)
-    for (const p of photos) {
-        const col = createPhoto(p);
-        row.appendChild(col);
-    }
+    // for (const p of photos) {
+    //     const col = createPhoto(p);
+    //     row.appendChild(col);
+    // }
+    const photoGallery = photos.map(p => createPhoto(p));
+    row.append(...photoGallery);
+    //console.log(creditCount);
+    console.log(getCreditCount(photos));
     main.appendChild(row);
     const tip = makeElement("div", "alert alert-danger my-2");
     tip.textContent = "Это очень важная информация (!): кликните по фото (сработает один раз).";
     main.insertBefore(tip, row);
-
     row.addEventListener("click", (e) => {
         if (e.target.tagName === "IMG") {
             console.log("Первый клик по фото:", e.target.alt);
             tip.remove(); // убираем подсказку
         }
-    }, { once: true });
+    }, {once: true});
 //"dblclick" - событие
     //e.target.tagName === "IMG" - адаптировать под аппликацию
     row.addEventListener("dblclick", (e) => {
-        if(e.target.tagName === "IMG") {
+        if (e.target.tagName === "IMG") {
             const img = e.target;
             const src = img.src; //адаптировать под аппликацию
             const col = img.parentElement.parentElement;// Элемент который удаляем, адаптировать под аппликацию
-            if(col) col.remove();
+            if (col) col.remove();
             //Удаление из БД (бэкенда) - адаптировать
             const index = photos.findIndex(p => p.src === src);
-            if(index != -1){
+            if (index != -1) {
                 photos.splice(index, 1);
                 console.log("photo deleted");
+                //обновить статистику
             }
             console.log("Photos: ", photos.length);
         }
@@ -147,13 +239,12 @@ if (main) {
 }
 
 
-
-
 function makeElement(tag, className = "") {
     const element = document.createElement(tag);
     if (className) {
         element.className = className;
-    };
+    }
+    ;
     return element;
 }
 
