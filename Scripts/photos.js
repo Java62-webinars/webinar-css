@@ -168,10 +168,22 @@ if (main) {
     //     const col = createPhoto(p);
     //     row.appendChild(col);
     // }
-    const photoGallery = photos.map(p => createPhoto(p));
-    row.append(...photoGallery);
-    //console.log(creditCount);
-    console.log(getCreditCount(photos));
+        photos.map(p => createPhoto(p))
+            .map(photo => row.append(photo));
+
+    try{
+        console.log(getCreditCount(photos));
+    }catch(e){
+        console.log(e.message)
+    };
+
+    const captionStats = getCaptionStats(photos);
+    console.log("Stats: ", captionStats);
+    try{
+        console.log(indexPhotosBySrc(photos));
+    }catch(e){
+        console.log(e.message)
+    };
     main.appendChild(row);
     const tip = makeElement("div", "alert alert-danger my-2");
     tip.textContent = "Это очень важная информация (!): кликните по фото (сработает один раз).";
